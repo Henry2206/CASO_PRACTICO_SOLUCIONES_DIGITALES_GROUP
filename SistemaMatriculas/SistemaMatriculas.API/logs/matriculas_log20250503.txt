@@ -1,0 +1,534 @@
+2025-05-03 15:52:19.106 -05:00 [INF] Now listening on: http://localhost:5192
+2025-05-03 15:52:19.386 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-05-03 15:52:19.387 -05:00 [INF] Hosting environment: Development
+2025-05-03 15:52:19.387 -05:00 [INF] Content root path: C:\Users\Lenovo\Desktop\Henry_Entrevista\SistemaMatriculas\SistemaMatriculas.API
+2025-05-03 15:52:19.744 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5192/swagger/index.html - -
+2025-05-03 15:52:19.980 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5192/swagger/index.html - - - 200 - text/html;charset=utf-8 237.3980ms
+2025-05-03 15:52:19.990 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5192/_vs/browserLink - -
+2025-05-03 15:52:19.992 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5192/_framework/aspnetcore-browser-refresh.js - -
+2025-05-03 15:52:19.995 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5192/_framework/aspnetcore-browser-refresh.js - - - 200 12374 application/javascript;+charset=utf-8 2.8746ms
+2025-05-03 15:52:20.036 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5192/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 46.5695ms
+2025-05-03 15:52:20.188 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5192/swagger/v1/swagger.json - -
+2025-05-03 15:52:20.198 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5192/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 10.1203ms
+2025-05-03 15:52:29.438 -05:00 [INF] Request starting HTTP/1.1 POST http://localhost:5192/api/Matriculas application/json 207
+2025-05-03 15:52:29.455 -05:00 [INF] Executing endpoint 'SistemaMatriculas.API.Controllers.MatriculasController.CrearMatricula (SistemaMatriculas.API)'
+2025-05-03 15:52:29.528 -05:00 [INF] Route matched with {action = "CrearMatricula", controller = "Matriculas"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult CrearMatricula(SistemaMatriculas.Domain.Entities.Matriculas) on controller SistemaMatriculas.API.Controllers.MatriculasController (SistemaMatriculas.API).
+2025-05-03 15:52:30.051 -05:00 [INF] Intentando crear matrícula para estudiante 10 en curso 8
+2025-05-03 15:52:32.994 -05:00 [INF] Executed DbCommand (97ms) [Parameters=[@__idEstudiante_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Estudiante] AS [e]
+        WHERE [e].[IdEstudiante] = @__idEstudiante_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-05-03 15:52:33.059 -05:00 [INF] Executed DbCommand (7ms) [Parameters=[@__idCurso_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Curso] AS [c]
+        WHERE [c].[IdCurso] = @__idCurso_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-05-03 15:52:33.076 -05:00 [INF] Executed DbCommand (5ms) [Parameters=[@__idEstudiante_0='?' (DbType = Int32), @__idCurso_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Matricula] AS [m]
+        WHERE [m].[IdEstudiante] = @__idEstudiante_0 AND [m].[IdCurso] = @__idCurso_1) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-05-03 15:52:33.507 -05:00 [INF] Executed DbCommand (54ms) [Parameters=[@p0='?' (DbType = Boolean), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (Size = 50), @p8='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Matricula] ([Estado], [FechaCreacion], [FechaMatricula], [FechaModificacion], [IdCurso], [IdEstadoMatricula], [IdEstudiante], [UsuarioCreacion], [UsuarioModificacion])
+OUTPUT INSERTED.[IdMatricula]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+2025-05-03 15:52:33.548 -05:00 [INF] Matrícula creada exitosamente con ID 21
+2025-05-03 15:52:33.562 -05:00 [INF] Executing OkObjectResult, writing value of type 'SistemaMatriculas.Domain.Entities.Matriculas'.
+2025-05-03 15:52:33.583 -05:00 [INF] Executed action SistemaMatriculas.API.Controllers.MatriculasController.CrearMatricula (SistemaMatriculas.API) in 4049.0965ms
+2025-05-03 15:52:33.584 -05:00 [INF] Executed endpoint 'SistemaMatriculas.API.Controllers.MatriculasController.CrearMatricula (SistemaMatriculas.API)'
+2025-05-03 15:52:33.597 -05:00 [INF] Request finished HTTP/1.1 POST http://localhost:5192/api/Matriculas application/json 207 - 200 - application/json;+charset=utf-8 4158.6877ms
+2025-05-03 15:58:58.431 -05:00 [INF] Now listening on: http://localhost:5192
+2025-05-03 15:58:58.718 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-05-03 15:58:58.719 -05:00 [INF] Hosting environment: Development
+2025-05-03 15:58:58.719 -05:00 [INF] Content root path: C:\Users\Lenovo\Desktop\Henry_Entrevista\SistemaMatriculas\SistemaMatriculas.API
+2025-05-03 15:58:59.383 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5192/swagger/index.html - -
+2025-05-03 15:58:59.676 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5192/swagger/index.html - - - 200 - text/html;charset=utf-8 294.6174ms
+2025-05-03 15:58:59.684 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5192/_vs/browserLink - -
+2025-05-03 15:58:59.687 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5192/_framework/aspnetcore-browser-refresh.js - -
+2025-05-03 15:58:59.693 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5192/_framework/aspnetcore-browser-refresh.js - - - 200 12374 application/javascript;+charset=utf-8 4.8317ms
+2025-05-03 15:58:59.725 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5192/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 40.9360ms
+2025-05-03 15:58:59.897 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5192/swagger/v1/swagger.json - -
+2025-05-03 15:58:59.907 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5192/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 9.4498ms
+2025-05-03 15:59:08.616 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5192/api/Matriculas/ObtenerPorMatricula/1 - -
+2025-05-03 15:59:08.636 -05:00 [INF] Executing endpoint 'SistemaMatriculas.API.Controllers.MatriculasController.ObtenerPorId (SistemaMatriculas.API)'
+2025-05-03 15:59:08.713 -05:00 [INF] Route matched with {action = "ObtenerPorId", controller = "Matriculas"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[SistemaMatriculas.Application.DTOs.MatriculaDto]] ObtenerPorId(Int32) on controller SistemaMatriculas.API.Controllers.MatriculasController (SistemaMatriculas.API).
+2025-05-03 15:59:12.671 -05:00 [INF] Executed DbCommand (137ms) [Parameters=[@__idMatricula_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[IdMatricula], [m].[IdEstudiante], ([e].[Nombres] + N' ') + [e].[Apellidos] AS [NombreEstudiante], [e].[NumeroDocumento] AS [DocumentoEstudiante], [m].[IdCurso], [c].[Nombre] AS [NombreCurso], [c].[Codigo] AS [CodigoCurso], ([p].[Nombres] + N' ') + [p].[Apellidos] AS [NombreProfesor], [e0].[Nombre] AS [EstadoMatricula], [m].[FechaMatricula]
+FROM [Matricula] AS [m]
+INNER JOIN [Estudiante] AS [e] ON [m].[IdEstudiante] = [e].[IdEstudiante]
+INNER JOIN [Curso] AS [c] ON [m].[IdCurso] = [c].[IdCurso]
+INNER JOIN [Profesor] AS [p] ON [c].[IdProfesor] = [p].[IdProfesor]
+INNER JOIN [EstadoMatricula] AS [e0] ON [m].[IdEstadoMatricula] = [e0].[IdEstadoMatricula]
+WHERE [m].[IdMatricula] = @__idMatricula_0
+2025-05-03 15:59:12.757 -05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SistemaMatriculas.Application.DTOs.MatriculaDto, SistemaMatriculas.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-03 15:59:12.793 -05:00 [INF] Executed action SistemaMatriculas.API.Controllers.MatriculasController.ObtenerPorId (SistemaMatriculas.API) in 4070.51ms
+2025-05-03 15:59:12.794 -05:00 [INF] Executed endpoint 'SistemaMatriculas.API.Controllers.MatriculasController.ObtenerPorId (SistemaMatriculas.API)'
+2025-05-03 15:59:12.813 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5192/api/Matriculas/ObtenerPorMatricula/1 - - - 200 - application/json;+charset=utf-8 4197.1347ms
+2025-05-03 15:59:25.972 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5192/api/Matriculas/ObtenerPorMatricula/1 - -
+2025-05-03 15:59:25.976 -05:00 [INF] Executing endpoint 'SistemaMatriculas.API.Controllers.MatriculasController.ObtenerPorId (SistemaMatriculas.API)'
+2025-05-03 15:59:25.977 -05:00 [INF] Route matched with {action = "ObtenerPorId", controller = "Matriculas"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[SistemaMatriculas.Application.DTOs.MatriculaDto]] ObtenerPorId(Int32) on controller SistemaMatriculas.API.Controllers.MatriculasController (SistemaMatriculas.API).
+2025-05-03 15:59:26.165 -05:00 [INF] Executed DbCommand (18ms) [Parameters=[@__idMatricula_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[IdMatricula], [m].[IdEstudiante], ([e].[Nombres] + N' ') + [e].[Apellidos] AS [NombreEstudiante], [e].[NumeroDocumento] AS [DocumentoEstudiante], [m].[IdCurso], [c].[Nombre] AS [NombreCurso], [c].[Codigo] AS [CodigoCurso], ([p].[Nombres] + N' ') + [p].[Apellidos] AS [NombreProfesor], [e0].[Nombre] AS [EstadoMatricula], [m].[FechaMatricula]
+FROM [Matricula] AS [m]
+INNER JOIN [Estudiante] AS [e] ON [m].[IdEstudiante] = [e].[IdEstudiante]
+INNER JOIN [Curso] AS [c] ON [m].[IdCurso] = [c].[IdCurso]
+INNER JOIN [Profesor] AS [p] ON [c].[IdProfesor] = [p].[IdProfesor]
+INNER JOIN [EstadoMatricula] AS [e0] ON [m].[IdEstadoMatricula] = [e0].[IdEstadoMatricula]
+WHERE [m].[IdMatricula] = @__idMatricula_0
+2025-05-03 15:59:26.168 -05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SistemaMatriculas.Application.DTOs.MatriculaDto, SistemaMatriculas.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-03 15:59:26.171 -05:00 [INF] Executed action SistemaMatriculas.API.Controllers.MatriculasController.ObtenerPorId (SistemaMatriculas.API) in 192.9996ms
+2025-05-03 15:59:26.171 -05:00 [INF] Executed endpoint 'SistemaMatriculas.API.Controllers.MatriculasController.ObtenerPorId (SistemaMatriculas.API)'
+2025-05-03 15:59:26.172 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5192/api/Matriculas/ObtenerPorMatricula/1 - - - 200 - application/json;+charset=utf-8 199.3604ms
+2025-05-03 15:59:35.029 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5192/api/Matriculas/ObtenerPorMatricula/1 - -
+2025-05-03 15:59:35.030 -05:00 [INF] Executing endpoint 'SistemaMatriculas.API.Controllers.MatriculasController.ObtenerPorId (SistemaMatriculas.API)'
+2025-05-03 15:59:35.030 -05:00 [INF] Route matched with {action = "ObtenerPorId", controller = "Matriculas"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[SistemaMatriculas.Application.DTOs.MatriculaDto]] ObtenerPorId(Int32) on controller SistemaMatriculas.API.Controllers.MatriculasController (SistemaMatriculas.API).
+2025-05-03 15:59:35.095 -05:00 [INF] Executed DbCommand (21ms) [Parameters=[@__idMatricula_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[IdMatricula], [m].[IdEstudiante], ([e].[Nombres] + N' ') + [e].[Apellidos] AS [NombreEstudiante], [e].[NumeroDocumento] AS [DocumentoEstudiante], [m].[IdCurso], [c].[Nombre] AS [NombreCurso], [c].[Codigo] AS [CodigoCurso], ([p].[Nombres] + N' ') + [p].[Apellidos] AS [NombreProfesor], [e0].[Nombre] AS [EstadoMatricula], [m].[FechaMatricula]
+FROM [Matricula] AS [m]
+INNER JOIN [Estudiante] AS [e] ON [m].[IdEstudiante] = [e].[IdEstudiante]
+INNER JOIN [Curso] AS [c] ON [m].[IdCurso] = [c].[IdCurso]
+INNER JOIN [Profesor] AS [p] ON [c].[IdProfesor] = [p].[IdProfesor]
+INNER JOIN [EstadoMatricula] AS [e0] ON [m].[IdEstadoMatricula] = [e0].[IdEstadoMatricula]
+WHERE [m].[IdMatricula] = @__idMatricula_0
+2025-05-03 15:59:35.097 -05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SistemaMatriculas.Application.DTOs.MatriculaDto, SistemaMatriculas.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-03 15:59:35.097 -05:00 [INF] Executed action SistemaMatriculas.API.Controllers.MatriculasController.ObtenerPorId (SistemaMatriculas.API) in 66.6437ms
+2025-05-03 15:59:35.097 -05:00 [INF] Executed endpoint 'SistemaMatriculas.API.Controllers.MatriculasController.ObtenerPorId (SistemaMatriculas.API)'
+2025-05-03 15:59:35.098 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5192/api/Matriculas/ObtenerPorMatricula/1 - - - 200 - application/json;+charset=utf-8 68.8910ms
+2025-05-03 15:59:50.041 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5192/api/Matriculas/ObtenerPorEstudiante/2 - -
+2025-05-03 15:59:50.042 -05:00 [INF] Executing endpoint 'SistemaMatriculas.API.Controllers.MatriculasController.ObtenerPorEstudiante (SistemaMatriculas.API)'
+2025-05-03 15:59:50.049 -05:00 [INF] Route matched with {action = "ObtenerPorEstudiante", controller = "Matriculas"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[SistemaMatriculas.Application.DTOs.MatriculaDto]] ObtenerPorEstudiante(Int32) on controller SistemaMatriculas.API.Controllers.MatriculasController (SistemaMatriculas.API).
+2025-05-03 15:59:50.091 -05:00 [INF] Executed DbCommand (19ms) [Parameters=[@__idEstudiante_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[IdMatricula], [m].[IdEstudiante], ([e].[Nombres] + N' ') + [e].[Apellidos] AS [NombreEstudiante], [e].[NumeroDocumento] AS [DocumentoEstudiante], [m].[IdCurso], [c].[Nombre] AS [NombreCurso], [c].[Codigo] AS [CodigoCurso], ([p].[Nombres] + N' ') + [p].[Apellidos] AS [NombreProfesor], [e0].[Nombre] AS [EstadoMatricula], [m].[FechaMatricula]
+FROM [Matricula] AS [m]
+INNER JOIN [Estudiante] AS [e] ON [m].[IdEstudiante] = [e].[IdEstudiante]
+INNER JOIN [Curso] AS [c] ON [m].[IdCurso] = [c].[IdCurso]
+INNER JOIN [Profesor] AS [p] ON [c].[IdProfesor] = [p].[IdProfesor]
+INNER JOIN [EstadoMatricula] AS [e0] ON [m].[IdEstadoMatricula] = [e0].[IdEstadoMatricula]
+WHERE [m].[IdEstudiante] = @__idEstudiante_0
+2025-05-03 15:59:50.092 -05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SistemaMatriculas.Application.DTOs.MatriculaDto, SistemaMatriculas.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-03 15:59:50.092 -05:00 [INF] Executed action SistemaMatriculas.API.Controllers.MatriculasController.ObtenerPorEstudiante (SistemaMatriculas.API) in 43.214ms
+2025-05-03 15:59:50.092 -05:00 [INF] Executed endpoint 'SistemaMatriculas.API.Controllers.MatriculasController.ObtenerPorEstudiante (SistemaMatriculas.API)'
+2025-05-03 15:59:50.092 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5192/api/Matriculas/ObtenerPorEstudiante/2 - - - 200 - application/json;+charset=utf-8 51.3525ms
+2025-05-03 16:00:14.915 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5192/api/Matriculas/ObtenerPorEstudiante/2 - -
+2025-05-03 16:00:14.916 -05:00 [INF] Executing endpoint 'SistemaMatriculas.API.Controllers.MatriculasController.ObtenerPorEstudiante (SistemaMatriculas.API)'
+2025-05-03 16:00:14.916 -05:00 [INF] Route matched with {action = "ObtenerPorEstudiante", controller = "Matriculas"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[SistemaMatriculas.Application.DTOs.MatriculaDto]] ObtenerPorEstudiante(Int32) on controller SistemaMatriculas.API.Controllers.MatriculasController (SistemaMatriculas.API).
+2025-05-03 16:00:14.946 -05:00 [INF] Executed DbCommand (25ms) [Parameters=[@__idEstudiante_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[IdMatricula], [m].[IdEstudiante], ([e].[Nombres] + N' ') + [e].[Apellidos] AS [NombreEstudiante], [e].[NumeroDocumento] AS [DocumentoEstudiante], [m].[IdCurso], [c].[Nombre] AS [NombreCurso], [c].[Codigo] AS [CodigoCurso], ([p].[Nombres] + N' ') + [p].[Apellidos] AS [NombreProfesor], [e0].[Nombre] AS [EstadoMatricula], [m].[FechaMatricula]
+FROM [Matricula] AS [m]
+INNER JOIN [Estudiante] AS [e] ON [m].[IdEstudiante] = [e].[IdEstudiante]
+INNER JOIN [Curso] AS [c] ON [m].[IdCurso] = [c].[IdCurso]
+INNER JOIN [Profesor] AS [p] ON [c].[IdProfesor] = [p].[IdProfesor]
+INNER JOIN [EstadoMatricula] AS [e0] ON [m].[IdEstadoMatricula] = [e0].[IdEstadoMatricula]
+WHERE [m].[IdEstudiante] = @__idEstudiante_0
+2025-05-03 16:00:14.947 -05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SistemaMatriculas.Application.DTOs.MatriculaDto, SistemaMatriculas.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-03 16:00:14.948 -05:00 [INF] Executed action SistemaMatriculas.API.Controllers.MatriculasController.ObtenerPorEstudiante (SistemaMatriculas.API) in 31.5797ms
+2025-05-03 16:00:14.948 -05:00 [INF] Executed endpoint 'SistemaMatriculas.API.Controllers.MatriculasController.ObtenerPorEstudiante (SistemaMatriculas.API)'
+2025-05-03 16:00:14.948 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5192/api/Matriculas/ObtenerPorEstudiante/2 - - - 200 - application/json;+charset=utf-8 32.4672ms
+2025-05-03 16:00:26.186 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5192/api/Matriculas/ObtenerPorEstudiante/2 - -
+2025-05-03 16:00:26.187 -05:00 [INF] Executing endpoint 'SistemaMatriculas.API.Controllers.MatriculasController.ObtenerPorEstudiante (SistemaMatriculas.API)'
+2025-05-03 16:00:26.187 -05:00 [INF] Route matched with {action = "ObtenerPorEstudiante", controller = "Matriculas"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[SistemaMatriculas.Application.DTOs.MatriculaDto]] ObtenerPorEstudiante(Int32) on controller SistemaMatriculas.API.Controllers.MatriculasController (SistemaMatriculas.API).
+2025-05-03 16:00:26.208 -05:00 [INF] Executed DbCommand (17ms) [Parameters=[@__idEstudiante_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[IdMatricula], [m].[IdEstudiante], ([e].[Nombres] + N' ') + [e].[Apellidos] AS [NombreEstudiante], [e].[NumeroDocumento] AS [DocumentoEstudiante], [m].[IdCurso], [c].[Nombre] AS [NombreCurso], [c].[Codigo] AS [CodigoCurso], ([p].[Nombres] + N' ') + [p].[Apellidos] AS [NombreProfesor], [e0].[Nombre] AS [EstadoMatricula], [m].[FechaMatricula]
+FROM [Matricula] AS [m]
+INNER JOIN [Estudiante] AS [e] ON [m].[IdEstudiante] = [e].[IdEstudiante]
+INNER JOIN [Curso] AS [c] ON [m].[IdCurso] = [c].[IdCurso]
+INNER JOIN [Profesor] AS [p] ON [c].[IdProfesor] = [p].[IdProfesor]
+INNER JOIN [EstadoMatricula] AS [e0] ON [m].[IdEstadoMatricula] = [e0].[IdEstadoMatricula]
+WHERE [m].[IdEstudiante] = @__idEstudiante_0
+2025-05-03 16:00:26.209 -05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SistemaMatriculas.Application.DTOs.MatriculaDto, SistemaMatriculas.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-03 16:00:26.209 -05:00 [INF] Executed action SistemaMatriculas.API.Controllers.MatriculasController.ObtenerPorEstudiante (SistemaMatriculas.API) in 21.5235ms
+2025-05-03 16:00:26.209 -05:00 [INF] Executed endpoint 'SistemaMatriculas.API.Controllers.MatriculasController.ObtenerPorEstudiante (SistemaMatriculas.API)'
+2025-05-03 16:00:26.210 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5192/api/Matriculas/ObtenerPorEstudiante/2 - - - 200 - application/json;+charset=utf-8 23.4460ms
+2025-05-03 16:00:44.359 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5192/api/Matriculas/ObtenerPorCurso/3 - -
+2025-05-03 16:00:44.360 -05:00 [INF] Executing endpoint 'SistemaMatriculas.API.Controllers.MatriculasController.ObtenerPorCurso (SistemaMatriculas.API)'
+2025-05-03 16:00:44.363 -05:00 [INF] Route matched with {action = "ObtenerPorCurso", controller = "Matriculas"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[SistemaMatriculas.Application.DTOs.MatriculaDto]] ObtenerPorCurso(Int32) on controller SistemaMatriculas.API.Controllers.MatriculasController (SistemaMatriculas.API).
+2025-05-03 16:00:44.431 -05:00 [INF] Executed DbCommand (45ms) [Parameters=[@__idCurso_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[IdMatricula], [m].[IdEstudiante], ([e].[Nombres] + N' ') + [e].[Apellidos] AS [NombreEstudiante], [e].[NumeroDocumento] AS [DocumentoEstudiante], [m].[IdCurso], [c].[Nombre] AS [NombreCurso], [c].[Codigo] AS [CodigoCurso], ([p].[Nombres] + N' ') + [p].[Apellidos] AS [NombreProfesor], [e0].[Nombre] AS [EstadoMatricula], [m].[FechaMatricula]
+FROM [Matricula] AS [m]
+INNER JOIN [Estudiante] AS [e] ON [m].[IdEstudiante] = [e].[IdEstudiante]
+INNER JOIN [Curso] AS [c] ON [m].[IdCurso] = [c].[IdCurso]
+INNER JOIN [Profesor] AS [p] ON [c].[IdProfesor] = [p].[IdProfesor]
+INNER JOIN [EstadoMatricula] AS [e0] ON [m].[IdEstadoMatricula] = [e0].[IdEstadoMatricula]
+WHERE [m].[IdCurso] = @__idCurso_0
+2025-05-03 16:00:44.431 -05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SistemaMatriculas.Application.DTOs.MatriculaDto, SistemaMatriculas.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-03 16:00:44.432 -05:00 [INF] Executed action SistemaMatriculas.API.Controllers.MatriculasController.ObtenerPorCurso (SistemaMatriculas.API) in 69.1979ms
+2025-05-03 16:00:44.432 -05:00 [INF] Executed endpoint 'SistemaMatriculas.API.Controllers.MatriculasController.ObtenerPorCurso (SistemaMatriculas.API)'
+2025-05-03 16:00:44.433 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5192/api/Matriculas/ObtenerPorCurso/3 - - - 200 - application/json;+charset=utf-8 73.3428ms
+2025-05-03 16:00:46.230 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5192/api/Matriculas/ObtenerPorCurso/3 - -
+2025-05-03 16:00:46.231 -05:00 [INF] Executing endpoint 'SistemaMatriculas.API.Controllers.MatriculasController.ObtenerPorCurso (SistemaMatriculas.API)'
+2025-05-03 16:00:46.231 -05:00 [INF] Route matched with {action = "ObtenerPorCurso", controller = "Matriculas"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[SistemaMatriculas.Application.DTOs.MatriculaDto]] ObtenerPorCurso(Int32) on controller SistemaMatriculas.API.Controllers.MatriculasController (SistemaMatriculas.API).
+2025-05-03 16:00:46.277 -05:00 [INF] Executed DbCommand (44ms) [Parameters=[@__idCurso_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[IdMatricula], [m].[IdEstudiante], ([e].[Nombres] + N' ') + [e].[Apellidos] AS [NombreEstudiante], [e].[NumeroDocumento] AS [DocumentoEstudiante], [m].[IdCurso], [c].[Nombre] AS [NombreCurso], [c].[Codigo] AS [CodigoCurso], ([p].[Nombres] + N' ') + [p].[Apellidos] AS [NombreProfesor], [e0].[Nombre] AS [EstadoMatricula], [m].[FechaMatricula]
+FROM [Matricula] AS [m]
+INNER JOIN [Estudiante] AS [e] ON [m].[IdEstudiante] = [e].[IdEstudiante]
+INNER JOIN [Curso] AS [c] ON [m].[IdCurso] = [c].[IdCurso]
+INNER JOIN [Profesor] AS [p] ON [c].[IdProfesor] = [p].[IdProfesor]
+INNER JOIN [EstadoMatricula] AS [e0] ON [m].[IdEstadoMatricula] = [e0].[IdEstadoMatricula]
+WHERE [m].[IdCurso] = @__idCurso_0
+2025-05-03 16:00:46.278 -05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SistemaMatriculas.Application.DTOs.MatriculaDto, SistemaMatriculas.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-03 16:00:46.278 -05:00 [INF] Executed action SistemaMatriculas.API.Controllers.MatriculasController.ObtenerPorCurso (SistemaMatriculas.API) in 47.2227ms
+2025-05-03 16:00:46.278 -05:00 [INF] Executed endpoint 'SistemaMatriculas.API.Controllers.MatriculasController.ObtenerPorCurso (SistemaMatriculas.API)'
+2025-05-03 16:00:46.279 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5192/api/Matriculas/ObtenerPorCurso/3 - - - 200 - application/json;+charset=utf-8 48.2006ms
+2025-05-03 16:01:00.979 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5192/api/Matriculas/ObtenerPorCurso/3 - -
+2025-05-03 16:01:00.980 -05:00 [INF] Executing endpoint 'SistemaMatriculas.API.Controllers.MatriculasController.ObtenerPorCurso (SistemaMatriculas.API)'
+2025-05-03 16:01:00.980 -05:00 [INF] Route matched with {action = "ObtenerPorCurso", controller = "Matriculas"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[SistemaMatriculas.Application.DTOs.MatriculaDto]] ObtenerPorCurso(Int32) on controller SistemaMatriculas.API.Controllers.MatriculasController (SistemaMatriculas.API).
+2025-05-03 16:01:01.001 -05:00 [INF] Executed DbCommand (17ms) [Parameters=[@__idCurso_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[IdMatricula], [m].[IdEstudiante], ([e].[Nombres] + N' ') + [e].[Apellidos] AS [NombreEstudiante], [e].[NumeroDocumento] AS [DocumentoEstudiante], [m].[IdCurso], [c].[Nombre] AS [NombreCurso], [c].[Codigo] AS [CodigoCurso], ([p].[Nombres] + N' ') + [p].[Apellidos] AS [NombreProfesor], [e0].[Nombre] AS [EstadoMatricula], [m].[FechaMatricula]
+FROM [Matricula] AS [m]
+INNER JOIN [Estudiante] AS [e] ON [m].[IdEstudiante] = [e].[IdEstudiante]
+INNER JOIN [Curso] AS [c] ON [m].[IdCurso] = [c].[IdCurso]
+INNER JOIN [Profesor] AS [p] ON [c].[IdProfesor] = [p].[IdProfesor]
+INNER JOIN [EstadoMatricula] AS [e0] ON [m].[IdEstadoMatricula] = [e0].[IdEstadoMatricula]
+WHERE [m].[IdCurso] = @__idCurso_0
+2025-05-03 16:01:01.002 -05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SistemaMatriculas.Application.DTOs.MatriculaDto, SistemaMatriculas.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-03 16:01:01.002 -05:00 [INF] Executed action SistemaMatriculas.API.Controllers.MatriculasController.ObtenerPorCurso (SistemaMatriculas.API) in 21.9079ms
+2025-05-03 16:01:01.002 -05:00 [INF] Executed endpoint 'SistemaMatriculas.API.Controllers.MatriculasController.ObtenerPorCurso (SistemaMatriculas.API)'
+2025-05-03 16:01:01.002 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5192/api/Matriculas/ObtenerPorCurso/3 - - - 200 - application/json;+charset=utf-8 23.2685ms
+2025-05-03 16:01:12.197 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5192/api/Matriculas/ObtenerPorCurso/3 - -
+2025-05-03 16:01:12.197 -05:00 [INF] Executing endpoint 'SistemaMatriculas.API.Controllers.MatriculasController.ObtenerPorCurso (SistemaMatriculas.API)'
+2025-05-03 16:01:12.197 -05:00 [INF] Route matched with {action = "ObtenerPorCurso", controller = "Matriculas"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[SistemaMatriculas.Application.DTOs.MatriculaDto]] ObtenerPorCurso(Int32) on controller SistemaMatriculas.API.Controllers.MatriculasController (SistemaMatriculas.API).
+2025-05-03 16:01:12.213 -05:00 [INF] Executed DbCommand (13ms) [Parameters=[@__idCurso_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[IdMatricula], [m].[IdEstudiante], ([e].[Nombres] + N' ') + [e].[Apellidos] AS [NombreEstudiante], [e].[NumeroDocumento] AS [DocumentoEstudiante], [m].[IdCurso], [c].[Nombre] AS [NombreCurso], [c].[Codigo] AS [CodigoCurso], ([p].[Nombres] + N' ') + [p].[Apellidos] AS [NombreProfesor], [e0].[Nombre] AS [EstadoMatricula], [m].[FechaMatricula]
+FROM [Matricula] AS [m]
+INNER JOIN [Estudiante] AS [e] ON [m].[IdEstudiante] = [e].[IdEstudiante]
+INNER JOIN [Curso] AS [c] ON [m].[IdCurso] = [c].[IdCurso]
+INNER JOIN [Profesor] AS [p] ON [c].[IdProfesor] = [p].[IdProfesor]
+INNER JOIN [EstadoMatricula] AS [e0] ON [m].[IdEstadoMatricula] = [e0].[IdEstadoMatricula]
+WHERE [m].[IdCurso] = @__idCurso_0
+2025-05-03 16:01:12.214 -05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SistemaMatriculas.Application.DTOs.MatriculaDto, SistemaMatriculas.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-03 16:01:12.214 -05:00 [INF] Executed action SistemaMatriculas.API.Controllers.MatriculasController.ObtenerPorCurso (SistemaMatriculas.API) in 16.747ms
+2025-05-03 16:01:12.214 -05:00 [INF] Executed endpoint 'SistemaMatriculas.API.Controllers.MatriculasController.ObtenerPorCurso (SistemaMatriculas.API)'
+2025-05-03 16:01:12.214 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5192/api/Matriculas/ObtenerPorCurso/3 - - - 200 - application/json;+charset=utf-8 18.0278ms
+2025-05-03 16:01:23.071 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5192/api/Matriculas/ObtenerPorEstado/1 - -
+2025-05-03 16:01:23.072 -05:00 [INF] Executing endpoint 'SistemaMatriculas.API.Controllers.MatriculasController.ObtenerPorEstado (SistemaMatriculas.API)'
+2025-05-03 16:01:23.073 -05:00 [INF] Route matched with {action = "ObtenerPorEstado", controller = "Matriculas"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[SistemaMatriculas.Application.DTOs.MatriculaDto]] ObtenerPorEstado(Int32) on controller SistemaMatriculas.API.Controllers.MatriculasController (SistemaMatriculas.API).
+2025-05-03 16:01:23.153 -05:00 [INF] Executed DbCommand (59ms) [Parameters=[@__idEstadoMatricula_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[IdMatricula], [m].[IdEstudiante], ([e].[Nombres] + N' ') + [e].[Apellidos] AS [NombreEstudiante], [e].[NumeroDocumento] AS [DocumentoEstudiante], [m].[IdCurso], [c].[Nombre] AS [NombreCurso], [c].[Codigo] AS [CodigoCurso], ([p].[Nombres] + N' ') + [p].[Apellidos] AS [NombreProfesor], [e0].[Nombre] AS [EstadoMatricula], [m].[FechaMatricula]
+FROM [Matricula] AS [m]
+INNER JOIN [Estudiante] AS [e] ON [m].[IdEstudiante] = [e].[IdEstudiante]
+INNER JOIN [Curso] AS [c] ON [m].[IdCurso] = [c].[IdCurso]
+INNER JOIN [Profesor] AS [p] ON [c].[IdProfesor] = [p].[IdProfesor]
+INNER JOIN [EstadoMatricula] AS [e0] ON [m].[IdEstadoMatricula] = [e0].[IdEstadoMatricula]
+WHERE [m].[IdEstadoMatricula] = @__idEstadoMatricula_0
+2025-05-03 16:01:23.154 -05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SistemaMatriculas.Application.DTOs.MatriculaDto, SistemaMatriculas.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-03 16:01:23.155 -05:00 [INF] Executed action SistemaMatriculas.API.Controllers.MatriculasController.ObtenerPorEstado (SistemaMatriculas.API) in 81.0189ms
+2025-05-03 16:01:23.155 -05:00 [INF] Executed endpoint 'SistemaMatriculas.API.Controllers.MatriculasController.ObtenerPorEstado (SistemaMatriculas.API)'
+2025-05-03 16:01:23.155 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5192/api/Matriculas/ObtenerPorEstado/1 - - - 200 - application/json;+charset=utf-8 83.5880ms
+2025-05-03 16:01:24.075 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5192/api/Matriculas/ObtenerPorEstado/1 - -
+2025-05-03 16:01:24.076 -05:00 [INF] Executing endpoint 'SistemaMatriculas.API.Controllers.MatriculasController.ObtenerPorEstado (SistemaMatriculas.API)'
+2025-05-03 16:01:24.076 -05:00 [INF] Route matched with {action = "ObtenerPorEstado", controller = "Matriculas"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[SistemaMatriculas.Application.DTOs.MatriculaDto]] ObtenerPorEstado(Int32) on controller SistemaMatriculas.API.Controllers.MatriculasController (SistemaMatriculas.API).
+2025-05-03 16:01:24.091 -05:00 [INF] Executed DbCommand (13ms) [Parameters=[@__idEstadoMatricula_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[IdMatricula], [m].[IdEstudiante], ([e].[Nombres] + N' ') + [e].[Apellidos] AS [NombreEstudiante], [e].[NumeroDocumento] AS [DocumentoEstudiante], [m].[IdCurso], [c].[Nombre] AS [NombreCurso], [c].[Codigo] AS [CodigoCurso], ([p].[Nombres] + N' ') + [p].[Apellidos] AS [NombreProfesor], [e0].[Nombre] AS [EstadoMatricula], [m].[FechaMatricula]
+FROM [Matricula] AS [m]
+INNER JOIN [Estudiante] AS [e] ON [m].[IdEstudiante] = [e].[IdEstudiante]
+INNER JOIN [Curso] AS [c] ON [m].[IdCurso] = [c].[IdCurso]
+INNER JOIN [Profesor] AS [p] ON [c].[IdProfesor] = [p].[IdProfesor]
+INNER JOIN [EstadoMatricula] AS [e0] ON [m].[IdEstadoMatricula] = [e0].[IdEstadoMatricula]
+WHERE [m].[IdEstadoMatricula] = @__idEstadoMatricula_0
+2025-05-03 16:01:24.091 -05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SistemaMatriculas.Application.DTOs.MatriculaDto, SistemaMatriculas.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-03 16:01:24.092 -05:00 [INF] Executed action SistemaMatriculas.API.Controllers.MatriculasController.ObtenerPorEstado (SistemaMatriculas.API) in 15.6348ms
+2025-05-03 16:01:24.092 -05:00 [INF] Executed endpoint 'SistemaMatriculas.API.Controllers.MatriculasController.ObtenerPorEstado (SistemaMatriculas.API)'
+2025-05-03 16:01:24.092 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5192/api/Matriculas/ObtenerPorEstado/1 - - - 200 - application/json;+charset=utf-8 16.6554ms
+2025-05-03 16:01:36.804 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5192/api/Matriculas/ObtenerPorEstado/1 - -
+2025-05-03 16:01:36.805 -05:00 [INF] Executing endpoint 'SistemaMatriculas.API.Controllers.MatriculasController.ObtenerPorEstado (SistemaMatriculas.API)'
+2025-05-03 16:01:36.805 -05:00 [INF] Route matched with {action = "ObtenerPorEstado", controller = "Matriculas"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[SistemaMatriculas.Application.DTOs.MatriculaDto]] ObtenerPorEstado(Int32) on controller SistemaMatriculas.API.Controllers.MatriculasController (SistemaMatriculas.API).
+2025-05-03 16:01:36.822 -05:00 [INF] Executed DbCommand (15ms) [Parameters=[@__idEstadoMatricula_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[IdMatricula], [m].[IdEstudiante], ([e].[Nombres] + N' ') + [e].[Apellidos] AS [NombreEstudiante], [e].[NumeroDocumento] AS [DocumentoEstudiante], [m].[IdCurso], [c].[Nombre] AS [NombreCurso], [c].[Codigo] AS [CodigoCurso], ([p].[Nombres] + N' ') + [p].[Apellidos] AS [NombreProfesor], [e0].[Nombre] AS [EstadoMatricula], [m].[FechaMatricula]
+FROM [Matricula] AS [m]
+INNER JOIN [Estudiante] AS [e] ON [m].[IdEstudiante] = [e].[IdEstudiante]
+INNER JOIN [Curso] AS [c] ON [m].[IdCurso] = [c].[IdCurso]
+INNER JOIN [Profesor] AS [p] ON [c].[IdProfesor] = [p].[IdProfesor]
+INNER JOIN [EstadoMatricula] AS [e0] ON [m].[IdEstadoMatricula] = [e0].[IdEstadoMatricula]
+WHERE [m].[IdEstadoMatricula] = @__idEstadoMatricula_0
+2025-05-03 16:01:36.822 -05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SistemaMatriculas.Application.DTOs.MatriculaDto, SistemaMatriculas.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-03 16:01:36.823 -05:00 [INF] Executed action SistemaMatriculas.API.Controllers.MatriculasController.ObtenerPorEstado (SistemaMatriculas.API) in 18.0901ms
+2025-05-03 16:01:36.823 -05:00 [INF] Executed endpoint 'SistemaMatriculas.API.Controllers.MatriculasController.ObtenerPorEstado (SistemaMatriculas.API)'
+2025-05-03 16:01:36.823 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5192/api/Matriculas/ObtenerPorEstado/1 - - - 200 - application/json;+charset=utf-8 19.0334ms
+2025-05-03 16:02:09.551 -05:00 [INF] Request starting HTTP/1.1 DELETE http://localhost:5192/api/Matriculas/21 - -
+2025-05-03 16:02:09.555 -05:00 [INF] Executing endpoint 'SistemaMatriculas.API.Controllers.MatriculasController.EliminarMatricula (SistemaMatriculas.API)'
+2025-05-03 16:02:09.558 -05:00 [INF] Route matched with {action = "EliminarMatricula", controller = "Matriculas"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult EliminarMatricula(Int32) on controller SistemaMatriculas.API.Controllers.MatriculasController (SistemaMatriculas.API).
+2025-05-03 16:02:09.562 -05:00 [INF] Intentando eliminar matrícula con ID 21
+2025-05-03 16:02:09.722 -05:00 [INF] Executed DbCommand (17ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [m].[IdMatricula], [m].[Estado], [m].[FechaCreacion], [m].[FechaMatricula], [m].[FechaModificacion], [m].[IdCurso], [m].[IdEstadoMatricula], [m].[IdEstudiante], [m].[UsuarioCreacion], [m].[UsuarioModificacion]
+FROM [Matricula] AS [m]
+WHERE [m].[IdMatricula] = @__p_0
+2025-05-03 16:02:09.865 -05:00 [WRN] No se puede eliminar matrícula con estado distinto a 'Cancelada'. ID: 21
+2025-05-03 16:02:09.867 -05:00 [INF] Executing NotFoundObjectResult, writing value of type 'System.String'.
+2025-05-03 16:02:09.867 -05:00 [INF] Executed action SistemaMatriculas.API.Controllers.MatriculasController.EliminarMatricula (SistemaMatriculas.API) in 308.6946ms
+2025-05-03 16:02:09.867 -05:00 [INF] Executed endpoint 'SistemaMatriculas.API.Controllers.MatriculasController.EliminarMatricula (SistemaMatriculas.API)'
+2025-05-03 16:02:09.868 -05:00 [INF] Request finished HTTP/1.1 DELETE http://localhost:5192/api/Matriculas/21 - - - 404 - text/plain;+charset=utf-8 317.1908ms
+2025-05-03 16:02:16.391 -05:00 [INF] Request starting HTTP/1.1 DELETE http://localhost:5192/api/Matriculas/30 - -
+2025-05-03 16:02:16.391 -05:00 [INF] Executing endpoint 'SistemaMatriculas.API.Controllers.MatriculasController.EliminarMatricula (SistemaMatriculas.API)'
+2025-05-03 16:02:16.391 -05:00 [INF] Route matched with {action = "EliminarMatricula", controller = "Matriculas"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult EliminarMatricula(Int32) on controller SistemaMatriculas.API.Controllers.MatriculasController (SistemaMatriculas.API).
+2025-05-03 16:02:16.392 -05:00 [INF] Intentando eliminar matrícula con ID 30
+2025-05-03 16:02:16.396 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [m].[IdMatricula], [m].[Estado], [m].[FechaCreacion], [m].[FechaMatricula], [m].[FechaModificacion], [m].[IdCurso], [m].[IdEstadoMatricula], [m].[IdEstudiante], [m].[UsuarioCreacion], [m].[UsuarioModificacion]
+FROM [Matricula] AS [m]
+WHERE [m].[IdMatricula] = @__p_0
+2025-05-03 16:02:16.396 -05:00 [WRN] Matrícula con ID 30 no encontrada
+2025-05-03 16:02:16.396 -05:00 [INF] Executing NotFoundObjectResult, writing value of type 'System.String'.
+2025-05-03 16:02:16.397 -05:00 [INF] Executed action SistemaMatriculas.API.Controllers.MatriculasController.EliminarMatricula (SistemaMatriculas.API) in 5.554ms
+2025-05-03 16:02:16.397 -05:00 [INF] Executed endpoint 'SistemaMatriculas.API.Controllers.MatriculasController.EliminarMatricula (SistemaMatriculas.API)'
+2025-05-03 16:02:16.397 -05:00 [INF] Request finished HTTP/1.1 DELETE http://localhost:5192/api/Matriculas/30 - - - 404 - text/plain;+charset=utf-8 6.3195ms
+2025-05-03 16:02:21.150 -05:00 [INF] Request starting HTTP/1.1 DELETE http://localhost:5192/api/Matriculas/35 - -
+2025-05-03 16:02:21.150 -05:00 [INF] Executing endpoint 'SistemaMatriculas.API.Controllers.MatriculasController.EliminarMatricula (SistemaMatriculas.API)'
+2025-05-03 16:02:21.150 -05:00 [INF] Route matched with {action = "EliminarMatricula", controller = "Matriculas"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult EliminarMatricula(Int32) on controller SistemaMatriculas.API.Controllers.MatriculasController (SistemaMatriculas.API).
+2025-05-03 16:02:21.151 -05:00 [INF] Intentando eliminar matrícula con ID 35
+2025-05-03 16:02:21.154 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [m].[IdMatricula], [m].[Estado], [m].[FechaCreacion], [m].[FechaMatricula], [m].[FechaModificacion], [m].[IdCurso], [m].[IdEstadoMatricula], [m].[IdEstudiante], [m].[UsuarioCreacion], [m].[UsuarioModificacion]
+FROM [Matricula] AS [m]
+WHERE [m].[IdMatricula] = @__p_0
+2025-05-03 16:02:21.154 -05:00 [WRN] Matrícula con ID 35 no encontrada
+2025-05-03 16:02:21.154 -05:00 [INF] Executing NotFoundObjectResult, writing value of type 'System.String'.
+2025-05-03 16:02:21.154 -05:00 [INF] Executed action SistemaMatriculas.API.Controllers.MatriculasController.EliminarMatricula (SistemaMatriculas.API) in 4.0307ms
+2025-05-03 16:02:21.155 -05:00 [INF] Executed endpoint 'SistemaMatriculas.API.Controllers.MatriculasController.EliminarMatricula (SistemaMatriculas.API)'
+2025-05-03 16:02:21.155 -05:00 [INF] Request finished HTTP/1.1 DELETE http://localhost:5192/api/Matriculas/35 - - - 404 - text/plain;+charset=utf-8 4.9985ms
+2025-05-03 16:02:35.553 -05:00 [INF] Request starting HTTP/1.1 DELETE http://localhost:5192/api/Matriculas/35 - -
+2025-05-03 16:02:35.553 -05:00 [INF] Executing endpoint 'SistemaMatriculas.API.Controllers.MatriculasController.EliminarMatricula (SistemaMatriculas.API)'
+2025-05-03 16:02:35.553 -05:00 [INF] Route matched with {action = "EliminarMatricula", controller = "Matriculas"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult EliminarMatricula(Int32) on controller SistemaMatriculas.API.Controllers.MatriculasController (SistemaMatriculas.API).
+2025-05-03 16:02:35.554 -05:00 [INF] Intentando eliminar matrícula con ID 35
+2025-05-03 16:02:35.581 -05:00 [INF] Executed DbCommand (25ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [m].[IdMatricula], [m].[Estado], [m].[FechaCreacion], [m].[FechaMatricula], [m].[FechaModificacion], [m].[IdCurso], [m].[IdEstadoMatricula], [m].[IdEstudiante], [m].[UsuarioCreacion], [m].[UsuarioModificacion]
+FROM [Matricula] AS [m]
+WHERE [m].[IdMatricula] = @__p_0
+2025-05-03 16:02:35.582 -05:00 [WRN] Matrícula con ID 35 no encontrada
+2025-05-03 16:02:35.582 -05:00 [INF] Executing NotFoundObjectResult, writing value of type 'System.String'.
+2025-05-03 16:02:35.582 -05:00 [INF] Executed action SistemaMatriculas.API.Controllers.MatriculasController.EliminarMatricula (SistemaMatriculas.API) in 28.8476ms
+2025-05-03 16:02:35.582 -05:00 [INF] Executed endpoint 'SistemaMatriculas.API.Controllers.MatriculasController.EliminarMatricula (SistemaMatriculas.API)'
+2025-05-03 16:02:35.583 -05:00 [INF] Request finished HTTP/1.1 DELETE http://localhost:5192/api/Matriculas/35 - - - 404 - text/plain;+charset=utf-8 30.2503ms
+2025-05-03 16:02:43.503 -05:00 [INF] Request starting HTTP/1.1 DELETE http://localhost:5192/api/Matriculas/50 - -
+2025-05-03 16:02:43.505 -05:00 [INF] Executing endpoint 'SistemaMatriculas.API.Controllers.MatriculasController.EliminarMatricula (SistemaMatriculas.API)'
+2025-05-03 16:02:43.505 -05:00 [INF] Route matched with {action = "EliminarMatricula", controller = "Matriculas"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult EliminarMatricula(Int32) on controller SistemaMatriculas.API.Controllers.MatriculasController (SistemaMatriculas.API).
+2025-05-03 16:02:43.506 -05:00 [INF] Intentando eliminar matrícula con ID 50
+2025-05-03 16:02:43.508 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [m].[IdMatricula], [m].[Estado], [m].[FechaCreacion], [m].[FechaMatricula], [m].[FechaModificacion], [m].[IdCurso], [m].[IdEstadoMatricula], [m].[IdEstudiante], [m].[UsuarioCreacion], [m].[UsuarioModificacion]
+FROM [Matricula] AS [m]
+WHERE [m].[IdMatricula] = @__p_0
+2025-05-03 16:02:43.509 -05:00 [WRN] Matrícula con ID 50 no encontrada
+2025-05-03 16:02:43.509 -05:00 [INF] Executing NotFoundObjectResult, writing value of type 'System.String'.
+2025-05-03 16:02:43.509 -05:00 [INF] Executed action SistemaMatriculas.API.Controllers.MatriculasController.EliminarMatricula (SistemaMatriculas.API) in 4.6001ms
+2025-05-03 16:02:43.509 -05:00 [INF] Executed endpoint 'SistemaMatriculas.API.Controllers.MatriculasController.EliminarMatricula (SistemaMatriculas.API)'
+2025-05-03 16:02:43.510 -05:00 [INF] Request finished HTTP/1.1 DELETE http://localhost:5192/api/Matriculas/50 - - - 404 - text/plain;+charset=utf-8 6.4421ms
+2025-05-03 16:02:49.233 -05:00 [INF] Request starting HTTP/1.1 PUT http://localhost:5192/api/Matriculas application/json 274
+2025-05-03 16:02:49.234 -05:00 [INF] Executing endpoint 'SistemaMatriculas.API.Controllers.MatriculasController.ModificarEstadoMatricula (SistemaMatriculas.API)'
+2025-05-03 16:02:49.237 -05:00 [INF] Route matched with {action = "ModificarEstadoMatricula", controller = "Matriculas"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult ModificarEstadoMatricula(SistemaMatriculas.Domain.Entities.Matriculas) on controller SistemaMatriculas.API.Controllers.MatriculasController (SistemaMatriculas.API).
+2025-05-03 16:02:49.347 -05:00 [INF] Modificando matrícula con ID 50
+2025-05-03 16:02:49.363 -05:00 [INF] Executed DbCommand (14ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [m].[IdMatricula], [m].[Estado], [m].[FechaCreacion], [m].[FechaMatricula], [m].[FechaModificacion], [m].[IdCurso], [m].[IdEstadoMatricula], [m].[IdEstudiante], [m].[UsuarioCreacion], [m].[UsuarioModificacion]
+FROM [Matricula] AS [m]
+WHERE [m].[IdMatricula] = @__p_0
+2025-05-03 16:02:49.363 -05:00 [WRN] Matrícula con ID 50 no encontrada
+2025-05-03 16:02:49.481 -05:00 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2025-05-03 16:02:49.481 -05:00 [INF] Executed action SistemaMatriculas.API.Controllers.MatriculasController.ModificarEstadoMatricula (SistemaMatriculas.API) in 243.8519ms
+2025-05-03 16:02:49.481 -05:00 [INF] Executed endpoint 'SistemaMatriculas.API.Controllers.MatriculasController.ModificarEstadoMatricula (SistemaMatriculas.API)'
+2025-05-03 16:02:49.481 -05:00 [INF] Request finished HTTP/1.1 PUT http://localhost:5192/api/Matriculas application/json 274 - 400 - text/plain;+charset=utf-8 248.2331ms
+2025-05-03 16:04:43.708 -05:00 [INF] Now listening on: http://localhost:5192
+2025-05-03 16:04:43.822 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-05-03 16:04:43.822 -05:00 [INF] Hosting environment: Development
+2025-05-03 16:04:43.822 -05:00 [INF] Content root path: C:\Users\Lenovo\Desktop\Henry_Entrevista\SistemaMatriculas\SistemaMatriculas.API
+2025-05-03 16:04:44.307 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5192/swagger/index.html - -
+2025-05-03 16:04:44.521 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5192/swagger/index.html - - - 200 - text/html;charset=utf-8 217.0167ms
+2025-05-03 16:04:44.526 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5192/_vs/browserLink - -
+2025-05-03 16:04:44.528 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5192/_framework/aspnetcore-browser-refresh.js - -
+2025-05-03 16:04:44.531 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5192/_framework/aspnetcore-browser-refresh.js - - - 200 12374 application/javascript;+charset=utf-8 2.5751ms
+2025-05-03 16:04:44.596 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5192/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 70.7712ms
+2025-05-03 16:04:44.753 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5192/swagger/v1/swagger.json - -
+2025-05-03 16:04:44.763 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5192/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 9.9706ms
+2025-05-03 16:04:50.756 -05:00 [INF] Request starting HTTP/1.1 DELETE http://localhost:5192/api/Matriculas/50 - -
+2025-05-03 16:04:50.774 -05:00 [INF] Executing endpoint 'SistemaMatriculas.API.Controllers.MatriculasController.EliminarMatricula (SistemaMatriculas.API)'
+2025-05-03 16:04:50.840 -05:00 [INF] Route matched with {action = "EliminarMatricula", controller = "Matriculas"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult EliminarMatricula(Int32) on controller SistemaMatriculas.API.Controllers.MatriculasController (SistemaMatriculas.API).
+2025-05-03 16:04:53.979 -05:00 [INF] Eliminar matrícula con ID 50
+2025-05-03 16:04:57.519 -05:00 [INF] Executed DbCommand (104ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [m].[IdMatricula], [m].[Estado], [m].[FechaCreacion], [m].[FechaMatricula], [m].[FechaModificacion], [m].[IdCurso], [m].[IdEstadoMatricula], [m].[IdEstudiante], [m].[UsuarioCreacion], [m].[UsuarioModificacion]
+FROM [Matricula] AS [m]
+WHERE [m].[IdMatricula] = @__p_0
+2025-05-03 16:05:03.615 -05:00 [WRN] Matrícula con ID 50 no encontrada
+2025-05-03 16:05:05.074 -05:00 [INF] Executing NotFoundObjectResult, writing value of type 'System.String'.
+2025-05-03 16:05:05.076 -05:00 [INF] Executed action SistemaMatriculas.API.Controllers.MatriculasController.EliminarMatricula (SistemaMatriculas.API) in 14233.5176ms
+2025-05-03 16:05:05.077 -05:00 [INF] Executed endpoint 'SistemaMatriculas.API.Controllers.MatriculasController.EliminarMatricula (SistemaMatriculas.API)'
+2025-05-03 16:05:05.081 -05:00 [INF] Request finished HTTP/1.1 DELETE http://localhost:5192/api/Matriculas/50 - - - 404 - text/plain;+charset=utf-8 14324.9742ms
+2025-05-03 16:06:08.068 -05:00 [INF] Now listening on: http://localhost:5192
+2025-05-03 16:06:08.203 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-05-03 16:06:08.203 -05:00 [INF] Hosting environment: Development
+2025-05-03 16:06:08.203 -05:00 [INF] Content root path: C:\Users\Lenovo\Desktop\Henry_Entrevista\SistemaMatriculas\SistemaMatriculas.API
+2025-05-03 16:06:09.115 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5192/swagger/index.html - -
+2025-05-03 16:06:09.336 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5192/swagger/index.html - - - 200 - text/html;charset=utf-8 222.1672ms
+2025-05-03 16:06:09.339 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5192/_vs/browserLink - -
+2025-05-03 16:06:09.343 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5192/_framework/aspnetcore-browser-refresh.js - -
+2025-05-03 16:06:09.351 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5192/_framework/aspnetcore-browser-refresh.js - - - 200 12374 application/javascript;+charset=utf-8 6.7861ms
+2025-05-03 16:06:09.373 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5192/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 34.1587ms
+2025-05-03 16:06:09.519 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5192/swagger/v1/swagger.json - -
+2025-05-03 16:06:09.527 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5192/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 8.0988ms
+2025-05-03 16:06:13.833 -05:00 [INF] Request starting HTTP/1.1 DELETE http://localhost:5192/api/Matriculas/50 - -
+2025-05-03 16:06:13.842 -05:00 [INF] Executing endpoint 'SistemaMatriculas.API.Controllers.MatriculasController.EliminarMatricula (SistemaMatriculas.API)'
+2025-05-03 16:06:13.862 -05:00 [INF] Route matched with {action = "EliminarMatricula", controller = "Matriculas"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult EliminarMatricula(Int32) on controller SistemaMatriculas.API.Controllers.MatriculasController (SistemaMatriculas.API).
+2025-05-03 16:06:16.271 -05:00 [INF] Eliminar matrícula con ID 50
+2025-05-03 16:06:17.263 -05:00 [INF] Executed DbCommand (46ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [m].[IdMatricula], [m].[Estado], [m].[FechaCreacion], [m].[FechaMatricula], [m].[FechaModificacion], [m].[IdCurso], [m].[IdEstadoMatricula], [m].[IdEstudiante], [m].[UsuarioCreacion], [m].[UsuarioModificacion]
+FROM [Matricula] AS [m]
+WHERE [m].[IdMatricula] = @__p_0
+2025-05-03 16:06:17.275 -05:00 [WRN] Matrícula con ID 50 no encontrada
+2025-05-03 16:06:22.940 -05:00 [INF] Executed action SistemaMatriculas.API.Controllers.MatriculasController.EliminarMatricula (SistemaMatriculas.API) in 9074.2032ms
+2025-05-03 16:06:22.942 -05:00 [INF] Executed endpoint 'SistemaMatriculas.API.Controllers.MatriculasController.EliminarMatricula (SistemaMatriculas.API)'
+2025-05-03 16:06:22.945 -05:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Exception: Matrícula no encontrada.
+   at SistemaMatriculas.Infrastructure.Repositories.MatriculasRepositorio.Eliminar(Int32 idMatricula) in C:\Users\Lenovo\Desktop\Henry_Entrevista\SistemaMatriculas\SistemaMatriculas.Infrastructure\Repositories\MatriculasRepositorio.cs:line 105
+   at SistemaMatriculas.Application.MatriculasServicio.Eliminar(Int32 idMatricula) in C:\Users\Lenovo\Desktop\Henry_Entrevista\SistemaMatriculas\SistemaMatriculas.Application\MatriculasServicio.cs:line 32
+   at SistemaMatriculas.API.Controllers.MatriculasController.EliminarMatricula(Int32 id) in C:\Users\Lenovo\Desktop\Henry_Entrevista\SistemaMatriculas\SistemaMatriculas.API\Controllers\MatriculasController.cs:line 52
+   at lambda_method2(Closure, Object, Object[])
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-05-03 16:06:22.993 -05:00 [INF] Request finished HTTP/1.1 DELETE http://localhost:5192/api/Matriculas/50 - - - 500 - text/plain;+charset=utf-8 9159.6477ms
+2025-05-03 16:07:13.789 -05:00 [INF] Request starting HTTP/1.1 PUT http://localhost:5192/api/Matriculas application/json 274
+2025-05-03 16:07:13.790 -05:00 [INF] Executing endpoint 'SistemaMatriculas.API.Controllers.MatriculasController.ModificarEstadoMatricula (SistemaMatriculas.API)'
+2025-05-03 16:07:13.796 -05:00 [INF] Route matched with {action = "ModificarEstadoMatricula", controller = "Matriculas"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult ModificarEstadoMatricula(SistemaMatriculas.Domain.Entities.Matriculas) on controller SistemaMatriculas.API.Controllers.MatriculasController (SistemaMatriculas.API).
+2025-05-03 16:07:13.919 -05:00 [INF] Modificando matrícula con ID 50
+2025-05-03 16:07:14.156 -05:00 [INF] Executed DbCommand (63ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [m].[IdMatricula], [m].[Estado], [m].[FechaCreacion], [m].[FechaMatricula], [m].[FechaModificacion], [m].[IdCurso], [m].[IdEstadoMatricula], [m].[IdEstudiante], [m].[UsuarioCreacion], [m].[UsuarioModificacion]
+FROM [Matricula] AS [m]
+WHERE [m].[IdMatricula] = @__p_0
+2025-05-03 16:07:14.157 -05:00 [WRN] Matrícula con ID 50 no encontrada
+2025-05-03 16:07:14.231 -05:00 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2025-05-03 16:07:14.233 -05:00 [INF] Executed action SistemaMatriculas.API.Controllers.MatriculasController.ModificarEstadoMatricula (SistemaMatriculas.API) in 436.1001ms
+2025-05-03 16:07:14.233 -05:00 [INF] Executed endpoint 'SistemaMatriculas.API.Controllers.MatriculasController.ModificarEstadoMatricula (SistemaMatriculas.API)'
+2025-05-03 16:07:14.234 -05:00 [INF] Request finished HTTP/1.1 PUT http://localhost:5192/api/Matriculas application/json 274 - 400 - text/plain;+charset=utf-8 445.3746ms
+2025-05-03 16:07:15.739 -05:00 [INF] Request starting HTTP/1.1 PUT http://localhost:5192/api/Matriculas application/json 274
+2025-05-03 16:07:15.740 -05:00 [INF] Executing endpoint 'SistemaMatriculas.API.Controllers.MatriculasController.ModificarEstadoMatricula (SistemaMatriculas.API)'
+2025-05-03 16:07:15.740 -05:00 [INF] Route matched with {action = "ModificarEstadoMatricula", controller = "Matriculas"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult ModificarEstadoMatricula(SistemaMatriculas.Domain.Entities.Matriculas) on controller SistemaMatriculas.API.Controllers.MatriculasController (SistemaMatriculas.API).
+2025-05-03 16:07:15.751 -05:00 [INF] Modificando matrícula con ID 50
+2025-05-03 16:07:15.779 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [m].[IdMatricula], [m].[Estado], [m].[FechaCreacion], [m].[FechaMatricula], [m].[FechaModificacion], [m].[IdCurso], [m].[IdEstadoMatricula], [m].[IdEstudiante], [m].[UsuarioCreacion], [m].[UsuarioModificacion]
+FROM [Matricula] AS [m]
+WHERE [m].[IdMatricula] = @__p_0
+2025-05-03 16:07:15.779 -05:00 [WRN] Matrícula con ID 50 no encontrada
+2025-05-03 16:07:15.822 -05:00 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2025-05-03 16:07:15.823 -05:00 [INF] Executed action SistemaMatriculas.API.Controllers.MatriculasController.ModificarEstadoMatricula (SistemaMatriculas.API) in 82.3437ms
+2025-05-03 16:07:15.823 -05:00 [INF] Executed endpoint 'SistemaMatriculas.API.Controllers.MatriculasController.ModificarEstadoMatricula (SistemaMatriculas.API)'
+2025-05-03 16:07:15.823 -05:00 [INF] Request finished HTTP/1.1 PUT http://localhost:5192/api/Matriculas application/json 274 - 400 - text/plain;+charset=utf-8 83.6918ms
+2025-05-03 16:07:40.100 -05:00 [INF] Now listening on: http://localhost:5192
+2025-05-03 16:07:40.217 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-05-03 16:07:40.218 -05:00 [INF] Hosting environment: Development
+2025-05-03 16:07:40.218 -05:00 [INF] Content root path: C:\Users\Lenovo\Desktop\Henry_Entrevista\SistemaMatriculas\SistemaMatriculas.API
+2025-05-03 16:07:40.805 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5192/swagger/index.html - -
+2025-05-03 16:07:41.028 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5192/swagger/index.html - - - 200 - text/html;charset=utf-8 225.5643ms
+2025-05-03 16:07:41.038 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5192/_vs/browserLink - -
+2025-05-03 16:07:41.038 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5192/_framework/aspnetcore-browser-refresh.js - -
+2025-05-03 16:07:41.041 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5192/_framework/aspnetcore-browser-refresh.js - - - 200 12374 application/javascript;+charset=utf-8 3.1077ms
+2025-05-03 16:07:41.073 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5192/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 34.9327ms
+2025-05-03 16:07:41.205 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5192/swagger/v1/swagger.json - -
+2025-05-03 16:07:41.214 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5192/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 9.2746ms
+2025-05-03 16:07:48.690 -05:00 [INF] Request starting HTTP/1.1 DELETE http://localhost:5192/api/Matriculas/50 - -
+2025-05-03 16:07:48.710 -05:00 [INF] Executing endpoint 'SistemaMatriculas.API.Controllers.MatriculasController.EliminarMatricula (SistemaMatriculas.API)'
+2025-05-03 16:07:48.779 -05:00 [INF] Route matched with {action = "EliminarMatricula", controller = "Matriculas"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult EliminarMatricula(Int32) on controller SistemaMatriculas.API.Controllers.MatriculasController (SistemaMatriculas.API).
+2025-05-03 16:07:51.028 -05:00 [INF] Eliminar matrícula con ID 50
+2025-05-03 16:07:53.312 -05:00 [INF] Executed DbCommand (81ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [m].[IdMatricula], [m].[Estado], [m].[FechaCreacion], [m].[FechaMatricula], [m].[FechaModificacion], [m].[IdCurso], [m].[IdEstadoMatricula], [m].[IdEstudiante], [m].[UsuarioCreacion], [m].[UsuarioModificacion]
+FROM [Matricula] AS [m]
+WHERE [m].[IdMatricula] = @__p_0
+2025-05-03 16:07:53.348 -05:00 [WRN] Matrícula con ID 50 no encontrada
+2025-05-03 16:07:57.375 -05:00 [INF] Executed action SistemaMatriculas.API.Controllers.MatriculasController.EliminarMatricula (SistemaMatriculas.API) in 8592.0923ms
+2025-05-03 16:07:57.376 -05:00 [INF] Executed endpoint 'SistemaMatriculas.API.Controllers.MatriculasController.EliminarMatricula (SistemaMatriculas.API)'
+2025-05-03 16:07:57.378 -05:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Exception: Matrícula no encontrada.
+   at SistemaMatriculas.Infrastructure.Repositories.MatriculasRepositorio.Eliminar(Int32 idMatricula) in C:\Users\Lenovo\Desktop\Henry_Entrevista\SistemaMatriculas\SistemaMatriculas.Infrastructure\Repositories\MatriculasRepositorio.cs:line 105
+   at SistemaMatriculas.Application.MatriculasServicio.Eliminar(Int32 idMatricula) in C:\Users\Lenovo\Desktop\Henry_Entrevista\SistemaMatriculas\SistemaMatriculas.Application\MatriculasServicio.cs:line 32
+   at SistemaMatriculas.API.Controllers.MatriculasController.EliminarMatricula(Int32 id) in C:\Users\Lenovo\Desktop\Henry_Entrevista\SistemaMatriculas\SistemaMatriculas.API\Controllers\MatriculasController.cs:line 52
+   at lambda_method2(Closure, Object, Object[])
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-05-03 16:07:57.405 -05:00 [INF] Request finished HTTP/1.1 DELETE http://localhost:5192/api/Matriculas/50 - - - 500 - text/plain;+charset=utf-8 8715.0472ms
+2025-05-03 16:08:37.259 -05:00 [INF] Request starting HTTP/1.1 PUT http://localhost:5192/api/Matriculas application/json 274
+2025-05-03 16:08:37.268 -05:00 [INF] Executing endpoint 'SistemaMatriculas.API.Controllers.MatriculasController.ModificarEstadoMatricula (SistemaMatriculas.API)'
+2025-05-03 16:08:37.274 -05:00 [INF] Route matched with {action = "ModificarEstadoMatricula", controller = "Matriculas"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult ModificarEstadoMatricula(SistemaMatriculas.Domain.Entities.Matriculas) on controller SistemaMatriculas.API.Controllers.MatriculasController (SistemaMatriculas.API).
+2025-05-03 16:08:43.082 -05:00 [INF] Modificando matrícula con ID 50
+2025-05-03 16:08:43.973 -05:00 [INF] Executed DbCommand (17ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [m].[IdMatricula], [m].[Estado], [m].[FechaCreacion], [m].[FechaMatricula], [m].[FechaModificacion], [m].[IdCurso], [m].[IdEstadoMatricula], [m].[IdEstudiante], [m].[UsuarioCreacion], [m].[UsuarioModificacion]
+FROM [Matricula] AS [m]
+WHERE [m].[IdMatricula] = @__p_0
+2025-05-03 16:08:45.353 -05:00 [WRN] Matrícula con ID 50 no encontrada
+2025-05-03 16:08:51.282 -05:00 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2025-05-03 16:08:51.284 -05:00 [INF] Executed action SistemaMatriculas.API.Controllers.MatriculasController.ModificarEstadoMatricula (SistemaMatriculas.API) in 14008.5733ms
+2025-05-03 16:08:51.284 -05:00 [INF] Executed endpoint 'SistemaMatriculas.API.Controllers.MatriculasController.ModificarEstadoMatricula (SistemaMatriculas.API)'
+2025-05-03 16:08:51.285 -05:00 [INF] Request finished HTTP/1.1 PUT http://localhost:5192/api/Matriculas application/json 274 - 400 - text/plain;+charset=utf-8 14026.6377ms
+2025-05-03 16:10:06.689 -05:00 [INF] Now listening on: http://localhost:5192
+2025-05-03 16:10:06.893 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-05-03 16:10:06.894 -05:00 [INF] Hosting environment: Development
+2025-05-03 16:10:06.894 -05:00 [INF] Content root path: C:\Users\Lenovo\Desktop\Henry_Entrevista\SistemaMatriculas\SistemaMatriculas.API
+2025-05-03 16:10:07.556 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5192/swagger/index.html - -
+2025-05-03 16:10:07.805 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5192/swagger/index.html - - - 200 - text/html;charset=utf-8 249.5564ms
+2025-05-03 16:10:07.810 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5192/_vs/browserLink - -
+2025-05-03 16:10:07.814 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5192/_framework/aspnetcore-browser-refresh.js - -
+2025-05-03 16:10:07.817 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5192/_framework/aspnetcore-browser-refresh.js - - - 200 12374 application/javascript;+charset=utf-8 2.7006ms
+2025-05-03 16:10:07.851 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5192/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 40.5937ms
+2025-05-03 16:10:08.019 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5192/swagger/v1/swagger.json - -
+2025-05-03 16:10:08.029 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5192/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 10.8415ms
+2025-05-03 16:10:13.503 -05:00 [INF] Request starting HTTP/1.1 DELETE http://localhost:5192/api/Matriculas/50 - -
+2025-05-03 16:10:13.521 -05:00 [INF] Executing endpoint 'SistemaMatriculas.API.Controllers.MatriculasController.EliminarMatricula (SistemaMatriculas.API)'
+2025-05-03 16:10:13.583 -05:00 [INF] Route matched with {action = "EliminarMatricula", controller = "Matriculas"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult EliminarMatricula(Int32) on controller SistemaMatriculas.API.Controllers.MatriculasController (SistemaMatriculas.API).
+2025-05-03 16:10:13.988 -05:00 [INF] Eliminar matrícula con ID 50
+2025-05-03 16:10:16.674 -05:00 [INF] Executed DbCommand (100ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [m].[IdMatricula], [m].[Estado], [m].[FechaCreacion], [m].[FechaMatricula], [m].[FechaModificacion], [m].[IdCurso], [m].[IdEstadoMatricula], [m].[IdEstudiante], [m].[UsuarioCreacion], [m].[UsuarioModificacion]
+FROM [Matricula] AS [m]
+WHERE [m].[IdMatricula] = @__p_0
+2025-05-03 16:10:16.709 -05:00 [WRN] Matrícula con ID 50 no encontrada
+2025-05-03 16:10:16.812 -05:00 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2025-05-03 16:10:16.820 -05:00 [INF] Executed action SistemaMatriculas.API.Controllers.MatriculasController.EliminarMatricula (SistemaMatriculas.API) in 3230.1447ms
+2025-05-03 16:10:16.821 -05:00 [INF] Executed endpoint 'SistemaMatriculas.API.Controllers.MatriculasController.EliminarMatricula (SistemaMatriculas.API)'
+2025-05-03 16:10:16.834 -05:00 [INF] Request finished HTTP/1.1 DELETE http://localhost:5192/api/Matriculas/50 - - - 400 - text/plain;+charset=utf-8 3330.8981ms
+2025-05-03 16:10:27.859 -05:00 [INF] Request starting HTTP/1.1 DELETE http://localhost:5192/api/Matriculas/14 - -
+2025-05-03 16:10:27.865 -05:00 [INF] Executing endpoint 'SistemaMatriculas.API.Controllers.MatriculasController.EliminarMatricula (SistemaMatriculas.API)'
+2025-05-03 16:10:27.865 -05:00 [INF] Route matched with {action = "EliminarMatricula", controller = "Matriculas"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult EliminarMatricula(Int32) on controller SistemaMatriculas.API.Controllers.MatriculasController (SistemaMatriculas.API).
+2025-05-03 16:10:27.870 -05:00 [INF] Eliminar matrícula con ID 14
+2025-05-03 16:10:28.037 -05:00 [INF] Executed DbCommand (17ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [m].[IdMatricula], [m].[Estado], [m].[FechaCreacion], [m].[FechaMatricula], [m].[FechaModificacion], [m].[IdCurso], [m].[IdEstadoMatricula], [m].[IdEstudiante], [m].[UsuarioCreacion], [m].[UsuarioModificacion]
+FROM [Matricula] AS [m]
+WHERE [m].[IdMatricula] = @__p_0
+2025-05-03 16:10:28.183 -05:00 [WRN] No se puede eliminar matrícula con estado distinto a 'Cancelada'. ID: 14
+2025-05-03 16:10:28.184 -05:00 [INF] Executing NotFoundObjectResult, writing value of type 'System.String'.
+2025-05-03 16:10:28.185 -05:00 [INF] Executed action SistemaMatriculas.API.Controllers.MatriculasController.EliminarMatricula (SistemaMatriculas.API) in 319.3431ms
+2025-05-03 16:10:28.185 -05:00 [INF] Executed endpoint 'SistemaMatriculas.API.Controllers.MatriculasController.EliminarMatricula (SistemaMatriculas.API)'
+2025-05-03 16:10:28.186 -05:00 [INF] Request finished HTTP/1.1 DELETE http://localhost:5192/api/Matriculas/14 - - - 404 - text/plain;+charset=utf-8 326.1654ms

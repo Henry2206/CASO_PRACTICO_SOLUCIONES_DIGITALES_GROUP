@@ -1,0 +1,154 @@
+[
+  {
+    "ContainingType": "SistemaMatriculas.API.Controllers.MatriculasController",
+    "Method": "CrearMatricula",
+    "RelativePath": "api/Matriculas",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "matricula",
+        "Type": "SistemaMatriculas.Domain.Entities.Matriculas",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemaMatriculas.API.Controllers.MatriculasController",
+    "Method": "ModificarEstadoMatricula",
+    "RelativePath": "api/Matriculas",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "matricula",
+        "Type": "SistemaMatriculas.Domain.Entities.Matriculas",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemaMatriculas.API.Controllers.MatriculasController",
+    "Method": "EliminarMatricula",
+    "RelativePath": "api/Matriculas/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemaMatriculas.API.Controllers.MatriculasController",
+    "Method": "ObtenerPorCurso",
+    "RelativePath": "api/Matriculas/ObtenerPorCurso/{idCurso}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idCurso",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[SistemaMatriculas.Application.DTOs.MatriculaDto, SistemaMatriculas.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SistemaMatriculas.API.Controllers.MatriculasController",
+    "Method": "ObtenerPorEstado",
+    "RelativePath": "api/Matriculas/ObtenerPorEstado/{idEstado}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idEstado",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[SistemaMatriculas.Application.DTOs.MatriculaDto, SistemaMatriculas.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SistemaMatriculas.API.Controllers.MatriculasController",
+    "Method": "ObtenerPorEstudiante",
+    "RelativePath": "api/Matriculas/ObtenerPorEstudiante/{idEstudiante}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idEstudiante",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[SistemaMatriculas.Application.DTOs.MatriculaDto, SistemaMatriculas.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SistemaMatriculas.API.Controllers.MatriculasController",
+    "Method": "ObtenerPorId",
+    "RelativePath": "api/Matriculas/ObtenerPorMatricula/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[SistemaMatriculas.Application.DTOs.MatriculaDto, SistemaMatriculas.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  }
+]

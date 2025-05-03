@@ -1,0 +1,17 @@
+C:\Users\Lenovo\Desktop\Henry_Entrevista\SistemaMatriculas\SistemaMatriculas.Infrastructure\bin\Debug\net7.0\SistemaMatriculas.Infrastructure.deps.json
+C:\Users\Lenovo\Desktop\Henry_Entrevista\SistemaMatriculas\SistemaMatriculas.Infrastructure\bin\Debug\net7.0\SistemaMatriculas.Infrastructure.dll
+C:\Users\Lenovo\Desktop\Henry_Entrevista\SistemaMatriculas\SistemaMatriculas.Infrastructure\bin\Debug\net7.0\SistemaMatriculas.Infrastructure.pdb
+C:\Users\Lenovo\Desktop\Henry_Entrevista\SistemaMatriculas\SistemaMatriculas.Infrastructure\bin\Debug\net7.0\SistemaMatriculas.Application.dll
+C:\Users\Lenovo\Desktop\Henry_Entrevista\SistemaMatriculas\SistemaMatriculas.Infrastructure\bin\Debug\net7.0\SistemaMatriculas.Domain.dll
+C:\Users\Lenovo\Desktop\Henry_Entrevista\SistemaMatriculas\SistemaMatriculas.Infrastructure\bin\Debug\net7.0\SistemaMatriculas.Application.pdb
+C:\Users\Lenovo\Desktop\Henry_Entrevista\SistemaMatriculas\SistemaMatriculas.Infrastructure\bin\Debug\net7.0\SistemaMatriculas.Domain.pdb
+C:\Users\Lenovo\Desktop\Henry_Entrevista\SistemaMatriculas\SistemaMatriculas.Infrastructure\obj\Debug\net7.0\SistemaMatriculas.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\Lenovo\Desktop\Henry_Entrevista\SistemaMatriculas\SistemaMatriculas.Infrastructure\obj\Debug\net7.0\SistemaMatriculas.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lenovo\Desktop\Henry_Entrevista\SistemaMatriculas\SistemaMatriculas.Infrastructure\obj\Debug\net7.0\SistemaMatriculas.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\Lenovo\Desktop\Henry_Entrevista\SistemaMatriculas\SistemaMatriculas.Infrastructure\obj\Debug\net7.0\SistemaMatriculas.Infrastructure.AssemblyInfo.cs
+C:\Users\Lenovo\Desktop\Henry_Entrevista\SistemaMatriculas\SistemaMatriculas.Infrastructure\obj\Debug\net7.0\SistemaMatriculas.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\Lenovo\Desktop\Henry_Entrevista\SistemaMatriculas\SistemaMatriculas.Infrastructure\obj\Debug\net7.0\SistemaM.82BEE02F.Up2Date
+C:\Users\Lenovo\Desktop\Henry_Entrevista\SistemaMatriculas\SistemaMatriculas.Infrastructure\obj\Debug\net7.0\SistemaMatriculas.Infrastructure.dll
+C:\Users\Lenovo\Desktop\Henry_Entrevista\SistemaMatriculas\SistemaMatriculas.Infrastructure\obj\Debug\net7.0\refint\SistemaMatriculas.Infrastructure.dll
+C:\Users\Lenovo\Desktop\Henry_Entrevista\SistemaMatriculas\SistemaMatriculas.Infrastructure\obj\Debug\net7.0\SistemaMatriculas.Infrastructure.pdb
+C:\Users\Lenovo\Desktop\Henry_Entrevista\SistemaMatriculas\SistemaMatriculas.Infrastructure\obj\Debug\net7.0\ref\SistemaMatriculas.Infrastructure.dll

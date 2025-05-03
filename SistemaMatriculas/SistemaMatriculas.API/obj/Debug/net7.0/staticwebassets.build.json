@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "BUrOj7Id2m5UX9nHs92k9y2AY6IxlA+XNMswj2fdT5Q=",
+  "Source": "SistemaMatriculas.API",
+  "BasePath": "_content/SistemaMatriculas.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

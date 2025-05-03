@@ -1,0 +1,400 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "SistemaMatriculas.API",
+    "version": "1.0"
+  },
+  "paths": {
+    "/api/Matriculas": {
+      "post": {
+        "tags": [
+          "Matriculas"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Matriculas"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Matriculas"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Matriculas"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Matriculas"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Matriculas"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Matriculas"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Matriculas"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Matriculas/{id}": {
+      "delete": {
+        "tags": [
+          "Matriculas"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Matriculas/ObtenerPorMatricula/{id}": {
+      "get": {
+        "tags": [
+          "Matriculas"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/MatriculaDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/MatriculaDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/MatriculaDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Matriculas/ObtenerPorEstudiante/{idEstudiante}": {
+      "get": {
+        "tags": [
+          "Matriculas"
+        ],
+        "parameters": [
+          {
+            "name": "idEstudiante",
+            "in": "path",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/MatriculaDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/MatriculaDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/MatriculaDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Matriculas/ObtenerPorCurso/{idCurso}": {
+      "get": {
+        "tags": [
+          "Matriculas"
+        ],
+        "parameters": [
+          {
+            "name": "idCurso",
+            "in": "path",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/MatriculaDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/MatriculaDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/MatriculaDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Matriculas/ObtenerPorEstado/{idEstado}": {
+      "get": {
+        "tags": [
+          "Matriculas"
+        ],
+        "parameters": [
+          {
+            "name": "idEstado",
+            "in": "path",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/MatriculaDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/MatriculaDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/MatriculaDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "MatriculaDto": {
+        "type": "object",
+        "properties": {
+          "idMatricula": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "idEstudiante": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nombreEstudiante": {
+            "type": "string",
+            "nullable": true
+          },
+          "documentoEstudiante": {
+            "type": "string",
+            "nullable": true
+          },
+          "idCurso": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nombreCurso": {
+            "type": "string",
+            "nullable": true
+          },
+          "codigoCurso": {
+            "type": "string",
+            "nullable": true
+          },
+          "nombreProfesor": {
+            "type": "string",
+            "nullable": true
+          },
+          "estadoMatricula": {
+            "type": "string",
+            "nullable": true
+          },
+          "fechaMatricula": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Matriculas": {
+        "required": [
+          "estado",
+          "fechaCreacion",
+          "fechaMatricula",
+          "idCurso",
+          "idEstadoMatricula",
+          "idEstudiante",
+          "usuarioCreacion"
+        ],
+        "type": "object",
+        "properties": {
+          "idMatricula": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "idEstudiante": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "idCurso": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "idEstadoMatricula": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "fechaMatricula": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "fechaCreacion": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "fechaModificacion": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "usuarioCreacion": {
+            "maxLength": 50,
+            "minLength": 1,
+            "type": "string"
+          },
+          "usuarioModificacion": {
+            "maxLength": 50,
+            "type": "string",
+            "nullable": true
+          },
+          "estado": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

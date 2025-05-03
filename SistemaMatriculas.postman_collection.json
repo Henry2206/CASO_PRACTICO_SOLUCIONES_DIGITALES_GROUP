@@ -1,0 +1,198 @@
+{
+	"info": {
+		"_postman_id": "32bb7e33-7d57-4063-b744-c8657f0dfaee",
+		"name": "SistemaMatriculas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40180304"
+	},
+	"item": [
+		{
+			"name": "Crear Matrícula",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"idEstudiante\": 10,\r\n  \"idCurso\": 8,\r\n  \"idEstadoMatricula\": 1,\r\n  \"fechaMatricula\": \"2025-05-02T00:00:00\",\r\n  \"fechaCreacion\": \"2025-05-03T12:00:00\",\r\n  \"usuarioCreacion\": \"admin\",\r\n  \"estado\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5192/api/Matriculas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5192",
+					"path": [
+						"api",
+						"Matriculas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar matrícula",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"idMatricula\": 50,\r\n  \"idEstadoMatricula\": 2,\r\n  \"fechaMatricula\": \"2025-05-01T00:00:00\",\r\n  \"fechaCreacion\": \"2025-05-01T12:00:00\",\r\n  \"fechaModificacion\": \"2025-05-03T15:30:00\",\r\n  \"usuarioCreacion\": \"admin\",\r\n  \"usuarioModificacion\": \"editor\",\r\n  \"estado\": true\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5192/api/Matriculas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5192",
+					"path": [
+						"api",
+						"Matriculas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar matrícula",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5192/api/Matriculas/14",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5192",
+					"path": [
+						"api",
+						"Matriculas",
+						"14"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ObtenerPorMatricula",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5192/api/Matriculas/ObtenerPorMatricula/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5192",
+					"path": [
+						"api",
+						"Matriculas",
+						"ObtenerPorMatricula",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ObtenerPorEstudiante",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5192/api/Matriculas/ObtenerPorEstudiante/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5192",
+					"path": [
+						"api",
+						"Matriculas",
+						"ObtenerPorEstudiante",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ObtenerPorCurso",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5192/api/Matriculas/ObtenerPorCurso/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5192",
+					"path": [
+						"api",
+						"Matriculas",
+						"ObtenerPorCurso",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ObtenerPorEstado",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5192/api/Matriculas/ObtenerPorEstado/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5192",
+					"path": [
+						"api",
+						"Matriculas",
+						"ObtenerPorEstado",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

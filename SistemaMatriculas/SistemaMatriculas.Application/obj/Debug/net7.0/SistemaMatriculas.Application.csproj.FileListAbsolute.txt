@@ -1,0 +1,15 @@
+C:\Users\Lenovo\Desktop\Henry_Entrevista\SistemaMatriculas\SistemaMatriculas.Application\bin\Debug\net7.0\SistemaMatriculas.Application.deps.json
+C:\Users\Lenovo\Desktop\Henry_Entrevista\SistemaMatriculas\SistemaMatriculas.Application\bin\Debug\net7.0\SistemaMatriculas.Application.dll
+C:\Users\Lenovo\Desktop\Henry_Entrevista\SistemaMatriculas\SistemaMatriculas.Application\bin\Debug\net7.0\SistemaMatriculas.Application.pdb
+C:\Users\Lenovo\Desktop\Henry_Entrevista\SistemaMatriculas\SistemaMatriculas.Application\bin\Debug\net7.0\SistemaMatriculas.Domain.dll
+C:\Users\Lenovo\Desktop\Henry_Entrevista\SistemaMatriculas\SistemaMatriculas.Application\bin\Debug\net7.0\SistemaMatriculas.Domain.pdb
+C:\Users\Lenovo\Desktop\Henry_Entrevista\SistemaMatriculas\SistemaMatriculas.Application\obj\Debug\net7.0\SistemaMatriculas.Application.csproj.AssemblyReference.cache
+C:\Users\Lenovo\Desktop\Henry_Entrevista\SistemaMatriculas\SistemaMatriculas.Application\obj\Debug\net7.0\SistemaMatriculas.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lenovo\Desktop\Henry_Entrevista\SistemaMatriculas\SistemaMatriculas.Application\obj\Debug\net7.0\SistemaMatriculas.Application.AssemblyInfoInputs.cache
+C:\Users\Lenovo\Desktop\Henry_Entrevista\SistemaMatriculas\SistemaMatriculas.Application\obj\Debug\net7.0\SistemaMatriculas.Application.AssemblyInfo.cs
+C:\Users\Lenovo\Desktop\Henry_Entrevista\SistemaMatriculas\SistemaMatriculas.Application\obj\Debug\net7.0\SistemaMatriculas.Application.csproj.CoreCompileInputs.cache
+C:\Users\Lenovo\Desktop\Henry_Entrevista\SistemaMatriculas\SistemaMatriculas.Application\obj\Debug\net7.0\SistemaM.BD65D1D2.Up2Date
+C:\Users\Lenovo\Desktop\Henry_Entrevista\SistemaMatriculas\SistemaMatriculas.Application\obj\Debug\net7.0\SistemaMatriculas.Application.dll
+C:\Users\Lenovo\Desktop\Henry_Entrevista\SistemaMatriculas\SistemaMatriculas.Application\obj\Debug\net7.0\refint\SistemaMatriculas.Application.dll
+C:\Users\Lenovo\Desktop\Henry_Entrevista\SistemaMatriculas\SistemaMatriculas.Application\obj\Debug\net7.0\SistemaMatriculas.Application.pdb
+C:\Users\Lenovo\Desktop\Henry_Entrevista\SistemaMatriculas\SistemaMatriculas.Application\obj\Debug\net7.0\ref\SistemaMatriculas.Application.dll
